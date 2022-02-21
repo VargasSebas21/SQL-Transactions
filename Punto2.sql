@@ -1,0 +1,1 @@
+update productos set precio = precio-(precio * 0.22) where id_producto = (select id_producto from dbo.detalles where id_factura = (select num_factura from dbo.facturas where num_pago = (select num_pago from dbo.modo_pagos where nombre = 'bitcoin')))
